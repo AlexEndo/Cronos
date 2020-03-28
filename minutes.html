@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Displaying Clock</title>
+    <style type = "text/css">
+    #clock {
+        width: 900px;
+        margin: 150px;
+        text-align: center;
+        font-size: 150px;
+    }
+    </style>
+</head>
+<body>
+<div id = "clock"></div>
+<script type = "text/javascript">
+    
+    setInterval(displayclock, 500); 
+    function displayclock() {
+        var time = new Date();
+        var hrs = time.getHours();
+        var min = time.getMinutes();
+        
+        if (hrs > 0) {
+            min = min + hrs * 60
+        }
+        
+        document.getElementById('clock').innerHTML = min;
+    }
+
+</script>
+</body>
+</html>
