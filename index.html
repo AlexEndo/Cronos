@@ -106,19 +106,17 @@
                         <div class="row">
                             <div class="col-md-12 text-center">
                                 <div class="header-text">
-                                    <p>Click the button to display the minutes of the time right now.</p>
-
-                                    <button onclick="myFunction()">Try it</button>
-
-                                    <p id="demo"></p>
-
+                                    <p id = "demo"></p>
                                     <script>
-                                    function myFunction() {
-                                      var d = new Date();
-                                      var n = d.getMinutes();
-                                      document.getElementById("demo").innerHTML = n;
-                                    }
+                                        function myFunction() {
+                                          var d = new Date();
+                                          var h = d.getHours();
+                                          var n = d.getMinutes();
+                                          document.getElementById("demo").innerHTML = h * 60 + n;
+                                        }
                                     </script>
+                                    <script>myFunction();</script>
+					
                                     <p>This is Cronos: a new way to track time.</p>
                                     <h2><span class="typing"></span></h2>xf
                                     
