@@ -15,12 +15,10 @@
         <div class="form">
             <form id="create-account" class="registration">
                 
-                <input type="text" class="input-box" placeholder="Username" id="username" required/>
-                <br>
-                <input type="password" class="input-box" placeholder="Password" id="password" required/>
-                <br>
-                <input type="password" class="input-box" placeholder="Reenter Password" id="confirm" required/>
-                <br>
+                <input type="text" class="input-box" placeholder="Username" id="username" required/><br>
+                <input type="password" class="input-box" placeholder="Password" id="password" required/><br>
+                <input type="password" class="input-box" placeholder="Reenter Password" id="confirm" required/><br>
+                <p><input type="checkbox" required> I agree to the terms of services.</p>
                 
                 <script>
                     var nameCookie = document.cookie;
@@ -28,11 +26,21 @@
                     
                     function checkPassword()
                     {
-                        var password = document.getElementById("password").value;
-                        var confirmPassword = document.getElementById("confirm").value;
+                        var theName = document.getElementById('username').value;
+                        var password = document.getElementById('password').value;
+                        var confirmPassword = document.getElementById('confirm').value;
                     
-                        if(password.value != confirmPassword.value){
-                           confirmPassword.setCustomValidity("Passwords don't match");
+                        if(password != confirmPassword){
+                           window.alert("Passwords don't match");
+                        }
+                        
+                        else if(password == theName){
+                            window.alert("Password can't be the same as your username");
+                        }
+                        
+                        else if(password == confirmPassword){
+                            retrieveName();
+                            retrievePassword();
                         }
                     }
                     
@@ -45,12 +53,13 @@
                         var accessKey = document.getElementById("password").value;
                         passwordCookie = "password is: " + accessKey;
                     }
+                    
+                    function clearCookies(){
+                        nameCookie
+                    }
                 </script>
                 
-                <input id="clickMe" type="button" value="Check if passwords match" onclick="checkPassword()"/>
-                
-                <p><input type="checkbox"> I agree to the terms of services.</p>
-                <button type="submit" class="submit-button" onclick="checkPassword()">Submit</button>
+                <button type="text" class="submit-button" onclick="checkPassword();">Submit</button>
                 <hr>
                 <p>Already have an account? <a href="#">Sign in here</a></p>
                 
@@ -58,33 +67,4 @@
         </div>
         </div>
     </body>
-    <!-- DON'T ADD TO HTML FILE, THIS IS FOR style.css
-
-        .login
-        {
-            width: 500px;
-            padding: 20px;
-        }
-
-        .input-box
-        {
-            border-radius: 20px;
-            padding: 10px;
-            margin: 10px;
-            width: 100%;
-            border: 1px solid #999;
-            outline: none;
-        }
-
-        .submit-button
-        {
-            border-radius: 20px;
-            padding: 3px;
-            margin: 10px 0;
-            width: 30%;
-            border: 1px solid #999;
-            outline: none;
-            color: blue;
-        }
--->
 </html>
