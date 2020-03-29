@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <!--
-    This is supposed to allow users to create an account, which will then let users compare their results with
-    other users.
-    -->
-    <head>
-    <title>Create Account Page</title>
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <h1>Create Account</h1>
-    <p>Create your account.</p>
+    <!-- Create Account Start -->
+    <h1>Create your account today!</h1>
+    <p>Enter the following information.</p>
     <body>
         <div class="login">
         <div class="form">
             <form class="registration">
-            
-                <input type="text" class="input-box" placeholder="Username"/>
-                <br>
-                <input type="password" class="input-box" placeholder="Password"/>
-                <br>
-                <input type="text" class="input-box" placeholder="Email"/>
-                <br>
-                <br>
-                <p><input type="checkbox"> I agree to the terms of services.</p>
-                <button type = "text" class="submit-button">Submit</button>
+                
+                <script>
+                    function checkInputs()
+                    {
+                        var username = document.getElementById("username");
+                        var password = document.getElementById("password");
+                        var confirmPassword = document.getElementById("confirm");
+                    
+                        if(password != confirmPassword){
+                           confirmPassword.setCustomValidity("Passwords don't match");
+                        }
+                            
+                        else{
+                            confirmPassword.setCustomValidit("Passwords match");
+                        }
+                        
+                        password.onchange = validatePassword;
+                        confirm.onkeyup = validatePassword;
+                    }
+                </script>
+                
+                <input type="text" placeholder="Username" id="username" required>
+                <input type="password" placeholder="Password" id="password" required>
+                <input type="password" placeholder="Reenter Password" id="confirm" required><hr>
+                <script>checkInputs()</script>
+                
+                <p><input type="checkbox">I agree to the terms of services.</p>
+                <button type="submit" class="submit-button">Submit</button>
+                <hr>
+                <p>Already have an account? <a href="#">Sign in here</a></p>
                 
             </form>
         </div>
         </div>
     </body>
+        
+    <!-- Create Account End -->
 </html>
