@@ -1,12 +1,16 @@
-/*
-   
-    Template Name : Rolling - Freelancer Portfolio Template
-    Author : UiPasta Team
-    Website : http://www.uipasta.com/
-    Support : http://www.uipasta.com/support/
-	
-	
-*/
+/*const firebaseConfig = {
+            apiKey: "AIzaSyAYNFQoW_3d27FxoatT7CsubuQVZXjpBcU",
+            authDomain: "cronos.firebaseapp.com",
+            databaseURL: "https://cronos.firebaseio.com/",
+            projectId: "cronos",
+            storageBucket: "cronos.appspot.com",
+            messagingSenderId: "477307245291",
+            appId: "1:477307245291:web:83a3fc367f1ab7e01c24ae",
+            measurementId: "G-HY5FJDHTHL"
+            };
+            firebase.initializeApp(firebaseConfig);
+            var db = firebase.firestore();
+	    */
 
 
 
@@ -29,6 +33,8 @@
  
 
 */
+
+
 
 
 (function ($) {
