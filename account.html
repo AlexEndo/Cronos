@@ -53,8 +53,22 @@
                         var accessKey = document.getElementById("password").value;
                         passwordCookie = "password is: " + accessKey;
                     }
+                    
+                    function randomPassword(){
+                        var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!?+-_=/\,.";
+                        var stringLength = 15;
+                        var randomPass = '';
+                        for (var i=0; i<stringLength; i++) {
+                            var num = Math.floor(Math.random() * chars.length);
+                            randomPass += chars.substring(num,num+1);
+                        }
+                        var randomPass = Math.random().toString(36).slice(-15);
+                        document.getElementById("rand").innerHTML = "Do you like this password? " + randomPass;
+                    }
                 </script>
                 
+                <button type="button" onclick="randomPassword();">Choose random password</button><br>
+                <p id="rand"></p>
                 <button type="text" class="submit-button" onclick="checkPassword();">Submit</button>
                 <hr>
                 <p>Already have an account? <a href="#">Sign in here</a></p>
