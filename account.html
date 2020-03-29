@@ -1,40 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <!-- Create Account Start -->
-    <h1>Create your account today!</h1>
-    <p>Enter the following information.</p>
-    <body>
+    <!--
+    This is supposed to allow users to create an account, which will then let users compare their results with
+    other users.
+    -->
+    <head>
+    <title>Create Account Page</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <h1>Create Account</h1>
+    <p>Create your account.</p>
+        <body>
         <div class="login">
         <div class="form">
-            <form class="registration">
+            <form id="create-account" class="registration">
+                
+                <input type="text" class="input-box" placeholder="Username" id="username" required/>
+                <br>
+                <input type="password" class="input-box" placeholder="Password" id="password" required/>
+                <br>
+                <input type="password" class="input-box" placeholder="Reenter Password" id="confirm" required/>
+                <br>
                 
                 <script>
-                    function checkInputs()
-                    {
-                        var username = document.getElementById("username");
-                        var password = document.getElementById("password");
-                        var confirmPassword = document.getElementById("confirm");
+                    var nameCookie = document.cookie;
+                    var passwordCookie = document.cookie;
                     
-                        if(password != confirmPassword){
+                    function checkPassword()
+                    {
+                        var password = document.getElementById("password").value;
+                        var confirmPassword = document.getElementById("confirm").value;
+                    
+                        if(password.value != confirmPassword.value){
                            confirmPassword.setCustomValidity("Passwords don't match");
                         }
-                            
-                        else{
-                            confirmPassword.setCustomValidit("Passwords match");
-                        }
-                        
-                        password.onchange = validatePassword;
-                        confirm.onkeyup = validatePassword;
+                    }
+                    
+                    function retrieveName() {
+                        var name = document.getElementById("username").value;
+                        nameCookie = "username is: " + name;
+                    }
+                    
+                    function retrievePassword(){
+                        var accessKey = document.getElementById("password").value;
+                        passwordCookie = "password is: " + accessKey;
                     }
                 </script>
                 
-                <input type="text" placeholder="Username" id="username" required>
-                <input type="password" placeholder="Password" id="password" required>
-                <input type="password" placeholder="Reenter Password" id="confirm" required><hr>
-                <script>checkInputs()</script>
+                <input id="clickMe" type="button" value="Check if passwords match" onclick="checkPassword()"/>
                 
-                <p><input type="checkbox">I agree to the terms of services.</p>
-                <button type="submit" class="submit-button">Submit</button>
+                <p><input type="checkbox"> I agree to the terms of services.</p>
+                <button type="submit" class="submit-button" onclick="checkPassword()">Submit</button>
                 <hr>
                 <p>Already have an account? <a href="#">Sign in here</a></p>
                 
@@ -42,6 +58,4 @@
         </div>
         </div>
     </body>
-        
-    <!-- Create Account End -->
 </html>
